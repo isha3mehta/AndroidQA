@@ -1,0 +1,43 @@
+<resources>
+    <declare-styleable name="MeterGauge">
+        <attr name="totalNotches" format="integer"/>
+
+        <attr name="incrementPerLargeNotch" format="integer"/>
+        <attr name="incrementPerSmallNotch" format="integer"/>
+
+        <attr name="scaleColor" format="integer"/>
+        <attr name="scaleCenterValue" format="integer"/>
+        <attr name="scaleMinValue" format="integer"/>
+        <attr name="scaleMaxValue" format="integer"/>
+
+        <attr name="rangeRedColor" format="integer"/>
+        <attr name="rangeRedMinValue" format="integer"/>
+        <attr name="rangeRedMaxValue" format="integer"/>
+
+        <attr name="rangeOrangeColor" format="integer"/>
+        <attr name="rangeOrangeMinValue" format="integer"/>
+        <attr name="rangeOrangeMaxValue" format="integer"/>
+
+        <attr name="rangeYellowColor" format="integer"/>
+        <attr name="rangeYellowMinValue" format="integer"/>
+        <attr name="rangeYellowMaxValue" format="integer"/>
+
+        <attr name="rangeParrotColor" format="integer"/>
+        <attr name="rangeParrotMinValue" format="integer"/>
+        <attr name="rangeParrotMaxValue" format="integer"/>
+
+        <attr name="rangeGreenColor" format="integer"/>
+        <attr name="rangeGreenMinValue" format="integer"/>
+        <attr name="rangeGreenMaxValue" format="integer"/>
+
+        <attr name="upperTitle" format="string"/>
+        <attr name="lowerTitle" format="string"/>
+        <attr name="unitTitle" format="string"/>
+
+        <attr name="showRange" format="boolean"/>
+        <attr name="showHand" format="boolean"/>
+        <attr name="showGauge" format="boolean"/>
+
+    </declare-styleable>
+
+</resources>

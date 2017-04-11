@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ibm.hondaconnect.DrivingAdviceScreen">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorGrayShade"
+        android:title="Trip Details"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/toolbar"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/topImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/over_score" />
+        <!--
+                <LinearLayout
+                    android:id="@+id/topImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="10"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/car_icon"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"/>
+
+                    <ProgressBar
+                    android:id="@+id/ProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                        android:theme="@style/AppTheme.WhiteAccent"
+                    android:layout_weight="8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@xml/progress"
+                    android:indeterminate="false"
+                    android:maxHeight="10dip"
+                    android:minHeight="10dip"
+                    android:progressDrawable="@drawable/greenprogress" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ProgressBar"
+                        android:text="80"
+                        android:gravity="center"
+                        android:textColor="@color/grey_text_color"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignBaseline="@+id/ProgressBar"
+                        android:textSize="@dimen/msil_text_size_large"/>
+
+        </LinearLayout>-->
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topImage"
+            android:background="@mipmap/dashboard_background"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/circle_white"
+                android:layout_gravity="center"/>
+
+
+            <TextView
+                android:id="@+id/text_interpretation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:text="@string/achiever"
+                android:background="#17AF4B"
+                android:textColor="@color/white"
+                android:textSize="@dimen/msil_text_size_medium" />
+
+            <com.ibm.hondaconnect.view.MeterGauge
+                android:id="@+id/meter"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:scaleCenterValue="0"
+                app:scaleMinValue="-90"
+                app:scaleMaxValue="90"
+                app:rangeRedColor="0x9fFE0000"
+                app:rangeRedMinValue="-90"
+                app:rangeRedMaxValue="-55"
+                app:rangeOrangeColor="0x9fFF8500"
+                app:rangeOrangeMinValue="-54"
+                app:rangeOrangeMaxValue="-19"
+                app:rangeYellowColor="0x9fFFFC01"
+                app:rangeYellowMinValue="-18"
+                app:rangeYellowMaxValue="17"
+                app:rangeParrotColor="0x9fD6F008"
+                app:rangeParrotMinValue="18"
+                app:rangeParrotMaxValue="53"
+                app:rangeGreenColor="0x9f17AF4B"
+                app:rangeGreenMinValue="54"
+                app:rangeGreenMaxValue="90" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_indication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/framelayout"
+            android:background="@mipmap/advice_background"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/driving_advice"
+                android:textColor="@color/colorGrayShade"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/advice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/advice1"
+                android:textColor="@color/colorGrayShade"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/more"
+                android:textColor="@color/blue"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/advice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/advice2"
+                android:textColor="@color/colorGrayShade"
+                android:textSize="18dp"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/advice3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/advice3"
+                android:textColor="@color/colorGrayShade"
+                android:textSize="18dp"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/less"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/less"
+                android:textColor="@color/blue"
+                android:visibility="gone"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
+</RelativeLayout>

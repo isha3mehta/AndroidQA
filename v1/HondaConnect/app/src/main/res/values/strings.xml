@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">HondaConnect</string>
+
+    <!-- +Start Driving Behavior+ -->
+    <string name="diving_score_last_trip">Driving Scores for Last 5 Trips</string>
+    <string name="diving_score_last_days">Driving Scores for Last 5 Days</string>
+    <string name="diving_score_last_months">Driving Scores for Last 5 Months</string>
+
+    <string name="very_good">Very Good</string>
+    <string name="good">Good</string>
+    <string name="average">Average</string>
+    <string name="poor">Poor</string>
+    <string name="very_poor">Very Poor</string>
+
+    <string name="excellent">12% Discount</string>
+    <string name="star_performer">8% Discount</string>
+    <string name="performer">5% Discount</string>
+    <string name="fair">2% Discount</string>
+    <string name="needs_improvement">0% Discount</string>
+    <string name="start_date_time">Start Date &amp; Time</string>
+    <string name="duration_of_trip">Duration of Trip HH:MM</string>
+    <string name="get_trips">GET TRIPS</string>
+    <string name="search_driving_report">GET REPORT</string>
+    <string name="msg_select_driving_date">Please select date to get report.</string>
+    <string name="msg_select_driving_month">Please select month to get report.</string>
+    <string name="error_loading_score">Error loading score</string>
+    <!-- +End Driving Behavior+ -->
+
+    <string name="btn_get_trips">Get Trips</string>
+    <string name="hint_date">Date</string>
+    <string name="distance">Distance</string>
+
+    <!-- +++++START DIALOG+++++ -->
+    <dimen name="dialog_margin">20dp</dimen>
+    <dimen name="dialog_padding">10dp</dimen>
+    <!-- +++++END DIALOG+++++ -->
+
+    <string name="indication">Indication</string>
+    <string name="share_using">Share Using</string>
+    <string name="driving_advice">Driving Advice</string>
+    <!--<string name="advice1"> 1) Break early in order to avoid sudden break in the end.</string>-->
+    <string name="advice1"> 1) Let off your accelerator pedal several seconds before you need to brake.</string>
+    <string name="advice2"> 2) Sharp braking is an indicator of aggressive/unsafe driving.It increases fuel consumption and accident risk.</string>
+    <string name="advice3"> 3) Sudden &amp; sharp acceleration consumes more fuel and increases accident risk and hence accelerate moderately.</string>
+    <string name="performance_details">Performance Details</string>
+    <string name="peer_comparison">Peer Comparison</string>
+    <string name="rating">Rating</string>
+    <string name="insurance_score">Insurance Score</string>
+    <string name="manage_alert">Manage Alert</string>
+    <string name="alerts_header">Please choose the alerts you want</string>
+    <string name="weather_alerts">Weather Alerts</string>
+    <string name="traffic_alerts">Traffic Alerts</string>
+    <string name="contextual_alerts">Contextual Alerts</string>
+    <string name="weather_alert">Weather Alert</string>
+    <string name="traffic_alert">Traffic Alert</string>
+    <string name="contextual_alert">Contextual Alert</string>
+    <string name="more">More Tips...</string>
+    <string name="less">Less Tips...</string>
+    <string name="close">Close</string>
+    <string name="achiever">Achiever</string>
+    <string name="insurance_score_text">You are eligible for Rs 5000 discount on next premium with your driving behavior</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="White">#ffffffff</color>
+    <color name="Black">#ff000000</color>
+    <color name="tab_background_selected">#6d6e70</color>
+    <color name="tab_background_unselected">#383838</color>
+
+    <color name="msilgreen">#23BE00</color>
+    <color name="driving_performance_parrot">#59ED7F</color>
+    <color name="driving_performance_yellow">#FFFC01</color>
+    <color name="driving_performance_orange">#FF8500</color>
+    <color name="driving_performance_red">#FE0000</color>
+    <color name="yellow_box">#FDED01</color>
+
+    <color name="msilGrey">#6d6e70</color>
+    <color name="msilMediumGrey">#DCDDDD</color>
+    <color name="msil_reg_text">#6d6e70</color>
+
+   <color name="colorGrayShade">#707070</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="blue">#4686DE</color>
+    <color name="grey_box">#383838</color>
+    <color name="grey_text_color">#999999</color>
+    <color name="transparent">#00000000</color>
+    <color name="green">#38B64B</color>
+
+</resources>

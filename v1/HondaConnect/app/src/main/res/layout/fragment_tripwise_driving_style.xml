@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Black"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--START PARENT LL -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Start Bar Chart and it's indicator-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_show_hide_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/msilGrey"
+                    android:layout_marginTop="10dp"
+                    android:padding="@dimen/nav_header_vertical_spacing">
+
+                    <ImageView
+                        android:id="@+id/iv_last_trips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/arrow_right" />
+
+                    <TextView
+                        android:id="@+id/tv_header_last_trips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:text="Driving Score For Last 5 Trips"
+                        android:textColor="@color/White"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <!-- Start Graph container-->
+                <LinearLayout
+                    android:id="@+id/container_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <TextView
+                        android:id="@+id/no_trip_chart_found"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:text="Error"
+                        android:textColor="@color/Black"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <!-- Start Color indicator-->
+                    <LinearLayout
+                        android:id="@+id/ll_chart_trip_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:id="@+id/chart_tripwise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="250dp"
+                            android:orientation="vertical" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/msilGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/updateprofile_top_padding">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/square_green" />
+
+                                <TextView
+                                    android:id="@+id/indicator_excellent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/very_good"
+                                    android:textColor="@color/White"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/updateprofile_top_padding">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/square_parrot" />
+
+                                <TextView
+                                    android:id="@+id/indicator_star_performer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/good"
+                                    android:textColor="@color/White"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/updateprofile_top_padding">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/square_yellow" />
+
+                                <TextView
+                                    android:id="@+id/indicator_performer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/average"
+                                    android:textColor="@color/White"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/updateprofile_top_padding">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/square_orange" />
+
+                                <TextView
+                                    android:id="@+id/indicator_fair"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/poor"
+                                    android:textColor="@color/White"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:padding="@dimen/updateprofile_top_padding">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/square_red" />
+
+                                <TextView
+                                    android:id="@+id/indicator_needs_improvement"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/very_poor"
+                                    android:textColor="@color/White"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!-- Color indicator End-->
+
+
+                </LinearLayout>
+                <!-- END Graph container-->
+            </LinearLayout>
+            <!--End Bar Chart and it's indicator-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/msilGrey" />
+            <!--START Trip List Portion-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_show_hide_triplist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/msilGrey"
+                    android:padding="@dimen/nav_header_vertical_spacing">
+
+                    <ImageView
+                        android:id="@+id/iv_trip_list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/arrow_down" />
+
+                    <TextView
+                        android:id="@+id/tv_header_triplist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:text="Trip Details"
+                        android:textColor="@color/White"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <!--START parent container for driving list-->
+
+                <LinearLayout
+                    android:id="@+id/parentContainerTripList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <!--START CONTAINER FOR TRIP LIST AND HEADER-->
+                    <LinearLayout
+                        android:id="@+id/ll_drivingstyle_list_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <!--START TRIP HEADER-->
+                        <LinearLayout
+                            android:id="@+id/ll_drivingstyle_list_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/tab_background_unselected"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tv_drivingstyle_sno"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="@dimen/my_connected_car_vertical_margin"
+                                android:layout_marginTop="@dimen/my_connected_car_vertical_margin"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="S.No"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:background="@color/White" />
+
+                            <TextView
+                                android:id="@+id/tv_drivingstyle_starttime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="@dimen/my_connected_car_vertical_margin"
+                                android:layout_marginTop="@dimen/my_connected_car_vertical_margin"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="@string/start_date_time"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:background="@color/White" />
+
+                            <TextView
+                                android:id="@+id/tv_drivingstyle_duration"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="@dimen/my_connected_car_vertical_margin"
+                                android:layout_marginTop="@dimen/my_connected_car_vertical_margin"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="@string/duration_of_trip"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:background="@color/White" />
+
+                            <TextView
+                                android:id="@+id/tv_drivingstyle_distance"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="@dimen/my_connected_car_vertical_margin"
+                                android:layout_marginTop="@dimen/my_connected_car_vertical_margin"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="@string/distance"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <!--END Trip List HEADER-->
+
+
+                    </LinearLayout>
+                    <!--END CONTAINER FOR TRIP LIST AND HEADER-->
+                    <TextView
+                        android:id="@+id/no_drivingstyle_found"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:text="No Trip Found"
+                        android:textColor="@color/Black"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+                <!--END parent container for driving list-->
+
+            </LinearLayout>
+            <!--END Trip List Portion-->
+
+
+            <!--START Trip Request Portion-->
+            <RelativeLayout
+                android:id="@+id/rl_drivingstyle_selectdate_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="@dimen/datafilter_vertical_margin"
+                android:paddingLeft="@dimen/datafilter_view_padding"
+                android:paddingRight="@dimen/datafilter_view_padding"
+                android:paddingTop="@dimen/datafilter_vertical_margin">
+
+
+                <TextView
+                    android:id="@+id/drivingstyle_tv_selectdateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/datafilter_vertical_margin"
+                    android:text="@string/hint_date"
+                    android:textColor="@color/msil_reg_text"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/iv_drivingstyle_selectdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/datafilter_view_padding"
+                    android:paddingRight="@dimen/datafilter_view_padding"
+                    android:src="@mipmap/calendar" />
+
+                <TextView
+                    android:id="@+id/tv_drivingstyle_selectdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/datafilter_vertical_margin"
+                    android:layout_toStartOf="@id/iv_drivingstyle_selectdate"
+                    android:textColor="@color/White"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/msilGrey" />
+
+            <Button
+                android:id="@+id/btn_drivingstyle_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/datafilter_filter_padding"
+                android:layout_marginEnd="@dimen/datafilter_view_padding"
+                android:layout_marginStart="@dimen/datafilter_view_padding"
+                android:layout_marginTop="@dimen/datafilter_filter_padding"
+                android:background="@drawable/button_bg_selector"
+                android:text="@string/get_trips"
+                android:textColor="@color/White"
+                android:textSize="16dp" />
+            <!--END Trip Request Portion-->
+
+        </LinearLayout>
+        <!--END PARENt LL-->
+    </ScrollView>
+</RelativeLayout>
